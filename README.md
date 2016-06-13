@@ -6,7 +6,7 @@ This repo is designed to house the overarching project plan and process for deli
 
 # Process Architecture
 The process utilized by these teams will be detailed in the following documents. 
-1. Requirement Gathering and Specification Documents (Reqs and Specs.md)
-2. User Story and Task Management (Agile.md)
-3. Source Code control, Branching, and Continuous Integration (SCC and CI)
-4. Release (Release.md)
+- Requirement Gathering and Specification Documents (Reqs and Specs.md)
+- User Story and Task Management (Agile.md)
+- Source Code control, Branching, and Continuous Integration (SCC and CI)
+- Release (Release.md)
