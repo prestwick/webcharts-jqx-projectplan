@@ -19,7 +19,7 @@ Spec State: [Brainstorming|Approved|Complete|Rejected]
  - [Link to Wireframes]
  - [Visual Assets]
  
- ## Implementation Details
+## Implementation Details
 *While not required this section is encourage to facilitate discussio between developers and the Product Owner.*
 - [Detailed description the architecture of the feature]
 - [Links to external documents impacting the implementation of the feature]
