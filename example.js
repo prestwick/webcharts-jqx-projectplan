@@ -1,4 +1,4 @@
-
+/*jshint unused:false*/
 
 var example = function (firstNum, secondNum) {
     'use strict';
