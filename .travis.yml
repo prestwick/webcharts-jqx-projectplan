@@ -2,8 +2,8 @@ language: node_js
 node_js:
     - "6"
 script: 
-    - test
-    - run lint
+    - npm run test
+    - npm run lint
 before_install:
     - export DISPLAY=:99.0
     - sh -e /etc/init.d/xvfb start
