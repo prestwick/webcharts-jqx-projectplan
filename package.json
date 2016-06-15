@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules/karma/bin/karma start my.conf.js --single-run",
-    "lint": "node_modules/jshint/bin/jshint example.js"
+    "lint": "node_modules/jshint/bin/jshint *.js"
   },
   "repository": {
     "type": "git",
