@@ -1,0 +1,24 @@
+{
+  "name": "webcharts-jqx-projectplan",
+  "version": "1.0.0",
+  "description": "Documents describing the project plan and process for JQX and WebCharts. Using Github to explore and refine the process.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prestwick/webcharts-jqx-projectplan.git"
+  },
+  "author": "Mark Black",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prestwick/webcharts-jqx-projectplan/issues"
+  },
+  "homepage": "https://github.com/prestwick/webcharts-jqx-projectplan#readme",
+  "devDependencies": {
+    "karma": "^0.13.22",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jasmine": "^1.0.2"
+  }
+}
