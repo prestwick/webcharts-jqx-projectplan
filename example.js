@@ -1,11 +1,7 @@
-/*jshint unused:false*/
-
 var example = function (firstNum, secondNum) {
     'use strict';
-    var sum,
-        diff;
+    var sum;
     sum = firstNum + secondNum;
-    diff = firstNum - secondNum;
     return {
         sum: sum
     };
