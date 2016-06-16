@@ -1,0 +1,30 @@
+{
+  "name": "webcharts-jqx-projectplan",
+  "version": "1.0.0",
+  "description": "Documents describing the project plan and process for JQX and WebCharts. Using Github to explore and refine the process.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/karma/bin/karma start karma.conf.js --single-run",
+    "style-check": "node_modules/jscs/bin/jscs *.js --config=.jscsrc",
+    "lint": "jslint *.js",
+    "lint-style": "node_modules/jscs/bin/jscs *.js --config=.jscsrc && jslint *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prestwick/webcharts-jqx-projectplan.git"
+  },
+  "author": "Mark Black",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prestwick/webcharts-jqx-projectplan/issues"
+  },
+  "homepage": "https://github.com/prestwick/webcharts-jqx-projectplan#readme",
+  "devDependencies": {
+    "jasmine-core": "2.4.1",
+    "jscs": "3.0.4",
+    "jslint": "^0.10.1",
+    "karma": "0.13.22",
+    "karma-firefox-launcher": "1.0.0",
+    "karma-jasmine": "1.0.2"
+  }
+}

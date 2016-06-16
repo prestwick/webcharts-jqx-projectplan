@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+    - "6"
+script: 
+    - npm run test
+    - npm run lint-style
+before_install:
+    - export DISPLAY=:99.0
+    - sh -e /etc/init.d/xvfb start
+before_script:
+    - npm install
+notifications:
+    email: false
+    
