@@ -3,7 +3,7 @@ node_js:
     - "6"
 script: 
     - npm run test
-    - npm run lint-style
+    - npm run lint
 before_install:
     - export DISPLAY=:99.0
     - sh -e /etc/init.d/xvfb start
