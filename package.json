@@ -6,8 +6,8 @@
   "scripts": {
     "test": "node_modules/karma/bin/karma start karma.conf.js --single-run",
     "style-check": "node_modules/jscs/bin/jscs *.js --config=.jscsrc",
-    "lint": "node_modules/jshint/bin/jshint *.js",
-    "lint-style": "node_modules/jscs/bin/jscs *.js --config=.jscsrc && node_modules/jshint/bin/jshint *.js"
+    "lint": "jslint *.js",
+    "lint-style": "node_modules/jscs/bin/jscs *.js --config=.jscsrc && jslint *.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
   "devDependencies": {
     "jasmine-core": "2.4.1",
     "jscs": "3.0.4",
-    "jshint": "2.9.2",
+    "jslint": "^0.10.1",
     "karma": "0.13.22",
     "karma-firefox-launcher": "1.0.0",
     "karma-jasmine": "1.0.2"
