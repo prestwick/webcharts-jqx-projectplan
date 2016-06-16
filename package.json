@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules/karma/bin/karma start karma.conf.js --single-run",
-    "lint": "node_modules/jscs/bin/jscs *.js --config=.jscsrc"
+    "style-check": "node_modules/jscs/bin/jscs *.js --config=.jscsrc",
+    "lint": "node_modules/jshint/bin/jshint *.js",
+    "lint-style": "node_modules/jscs/bin/jscs *.js --config=.jscsrc && node_modules/jshint/bin/jshint *.js"
   },
   "repository": {
     "type": "git",
@@ -18,10 +20,11 @@
   },
   "homepage": "https://github.com/prestwick/webcharts-jqx-projectplan#readme",
   "devDependencies": {
-    "jasmine-core": "^2.4.1",
-    "jscs": "^3.0.4",
-    "karma": "^0.13.22",
-    "karma-firefox-launcher": "^1.0.0",
-    "karma-jasmine": "^1.0.2"
+    "jasmine-core": "2.4.1",
+    "jscs": "3.0.4",
+    "jshint": "2.9.2",
+    "karma": "0.13.22",
+    "karma-firefox-launcher": "1.0.0",
+    "karma-jasmine": "1.0.2"
   }
 }
