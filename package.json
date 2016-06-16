@@ -4,7 +4,7 @@
   "description": "Documents describing the project plan and process for JQX and WebCharts. Using Github to explore and refine the process.",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/karma/bin/karma start my.conf.js --single-run",
+    "test": "node_modules/karma/bin/karma start karma.conf.js --single-run",
     "lint": "node_modules/jscs/bin/jscs *.js --config=.jscsrc"
   },
   "repository": {
