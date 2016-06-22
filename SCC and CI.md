@@ -35,10 +35,16 @@ The master branch serves as both trunk and release branch for the project. Featu
 Feature branches should have an informative title that are similar to the user story that is being worked on in the branch. When a feature branch is created the entire CI comes with it. Developers are encouraged to commit code to this feature branches often (1-2 times per hour). Frequent commits are encourage developers to plan on making code changes in small chunks, ensure the CI stays in a good state, and easily find issues when the CI does fail. In most cases each developer will be working out of a single branch at any given time, but it is not uncommon for two developers to work in a single branch if they are collaboratively on code development. In no cases should the entire team be working out of a single branch. 
 
 # Tests
-This is a V&V plan
-## Automated Tests
-Unit
-Integration
-Acceptance
-## Manual Tests (Visual Verification)
+Testing along with documentation and the delivered code are the three pillars of this project. Without thorough automated test the CI is useless. The goal for each stage of testing is 80% or better coverage. For unit testing this is means our test have at least 80% code coverage. For acceptance and manual tests this means that at least 80% of the user facing functionality is tested. Code coverage for unit tests is easily measured using Karma and the CI should be configured to fail when there is less than 80% coverage. This is less clear for acceptance and manual test and it will be up to the Tech Lead and Product Owner to determine if this bar has been met. 
 
+## Automated Unit Tests
+This tests individual method calls to ensure regressions have not been introduced. These tests will be run against code that is in the branch currently being committed to git. 
+
+## Automated Acceptance Tests
+Acceptance test only run after unit tests have passed. The tests themselves should touch public APIs only and to the best of our ability reflect the actions of end users using the software. These tests are to run a production-like environment (referred to as test enviroment) on minified code that is access via CDN (hosted), npm package, (installed), or NuGet package (installed). The tests run on these three distributions can be the same. All tests should be run on all browsers we claim support for each type of distribution. This creates a test matrix as follows
+- Acceptance Test Suite, Code via CDN, Test on Chrome, Firefox, Edge, and Safari
+- Acceptance Test Suite, Code via npm, Test on Chrome, Firefox, Edge, and Safari
+- Acceptance Test Suite, Code via NuGet, Test on Chrome, Firefox, Edge, and Safari
+
+## Manual Acceptance Tests (Visual Verification)
+Manual tests should only be run if all automated tests have passed, and will only be run prior to a release. Manual tests should not be the backup for poor automated unit and acceptance tests. Instead they should be focused on catching visual defects and other defects that cannot be tested in an automated fashion. 
