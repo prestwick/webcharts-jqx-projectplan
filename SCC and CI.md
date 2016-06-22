@@ -48,3 +48,6 @@ Acceptance test only run after unit tests have passed. The tests themselves shou
 
 ## Manual Acceptance Tests (Visual Verification)
 Manual tests should only be run if all automated tests have passed, and will only be run prior to a release. Manual tests should not be the backup for poor automated unit and acceptance tests. Instead they should be focused on catching visual defects and other defects that cannot be tested in an automated fashion. 
+
+## Smoke Tests
+These are a subset of automated acceptance tests than are run against code and packages in production. 
