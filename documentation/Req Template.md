@@ -18,7 +18,7 @@ __*How to use:*__
 - *Example: Must achieve constant 60fps*
 
 # Documentation
-*list all required documentation
+*list all required documentation*
 
 # Design
 *The user experience design for the feature. This material made be included inline or it may be links to external documents (NITalk, Google Docs, etc).* 
