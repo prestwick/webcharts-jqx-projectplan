@@ -1,8 +1,8 @@
-# Source Code Control, Branching, and Continuous Integration
+# Version Control, Branching, and Continuous Integration
 This document describes the tools and policies used for version control, testing and continuous integration. The two pillars of this document are *everything is version controlled* and *continuous integration*. If no other policy or practice is followed these two must be utilized. 
 
 # Version Control
-Its more the just source code. Version control is a broad term because all code, tests, configuration, and documentation are kept version controlled. Doing so provides a single source of truth for all information related to the project. This also provides the ability to quickly bring new members on to the project. The goal for version control should be to allow a developer to have everything they need to participate in the project by synching the master brand and running `npm install` from the command line. 
+Its more the just source code. Version control is a broad term because all code, tests, configuration, and documentation are kept version controlled. Doing so provides a single source of truth for all information related to the project. This also provides the ability to quickly bring new members on to the project. The goal for version control should be to allow a developer to have everything they need to participate in the project by syncing the master brand and running `npm install` from the command line. 
 
 Its well understood why source code is kept version controls. Tests are as important as source code and all developers should be able to easily access and run tests, and version control is the best way to facilitate it. 
 
