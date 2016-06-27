@@ -7,8 +7,6 @@ script:
 before_install:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
-- pip install --user awscli
-- export PATH=$PATH:$HOME/.local/bin
 before_script:
 - npm install
 after_success:
