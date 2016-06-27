@@ -15,6 +15,6 @@ notifications:
   email: false
 addons:
   artifacts: true
-  paths:
-    - tmp/example.min.js
-    - tmp/example.min.js.map
+    paths:
+      - $HOME/travis/build/prestwick/webcharts-jqx-projectplan/tmp/example.min.js
+      - $HOME/travis/build/prestwick/webcharts-jqx-projectplan/tmp/example.min.js.map
