@@ -1,16 +1,20 @@
 language: node_js
 node_js:
-    - "6"
-script: 
-    - npm run test
-    - npm run lint-style
+- '6'
+script:
+- npm run test
+- npm run lint-style
 before_install:
-    - export DISPLAY=:99.0
-    - sh -e /etc/init.d/xvfb start
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 before_script:
-    - npm install
+- npm install
 after_success:
-    - npm run minify
+- npm run minify
 notifications:
-    email: false
-    
+  email: false
+addons:
+  artifacts: true
+  paths:
+    - tmp/example.min.js
+    - tmp/example.min.js.map
