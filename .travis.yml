@@ -11,6 +11,11 @@ before_script:
 - npm install
 after_success:
 - npm run minify
-- ls /home/travis/bin/artifacts
 notifications:
   email: false
+addons:
+  artifacts:
+    paths:
+      - $HOME/travis/build/prestwick/webcharts-jqx-projectplan/tmp/example.min.js
+      - $HOME/travis/build/prestwick/webcharts-jqx-projectplan/tmp/example.min.js.map
+    debug: true
