@@ -38,6 +38,6 @@ deploy:
   skip_cleanup: true
   bucket: "wc-jqx-artifact-repo"
   local_dir: tmp
-  upload-dir: TRAVIS_BRANCH\TRAVIS_TAG
+  upload-dir: $TRAVIS_BRANCH\$TRAVIS_TAG
   on:
     tags: true
