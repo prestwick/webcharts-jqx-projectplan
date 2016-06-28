@@ -27,5 +27,6 @@ deploy:
   skip_cleanup: true
   bucket: "wc-jqx-artifact-repo"
   local_dir: tmp
+  upload-dir: latest
   on:
     tags: true
