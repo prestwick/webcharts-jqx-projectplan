@@ -26,5 +26,5 @@ deploy:
     secure: LiaGBxUzPtrmodtmA2KK3QbFQ4ROTAx4lyaC19kU0eB0hi7/AOIPia1WWhmhIhJsEevyJBSnDv/75bolVRN/dpBPRefu9CQW5wgX/dEk7US+52zrPT5BWsmhlwttqtmD2m7cnU6IY7C8FF/gjJM1uxqq5ToP8RqGeOxYiw+GRkz/Ge+5Nc+Pxk/Y7PQYtuAoU7DLzdhsnkp3DsqjHQwIjMbEp2Q8aBcvbBFuzdxYovBRj1O6YDy3IZxdCH3ZUu35ChwIT8KAB7Jgaqyk354cqU4nXEp1v9L18Bmp/wu+D/az94X5vTul/AQbmGbWJ78HLKzxx2M21NzZnEFPHMhe1jS8mH9YiFqPA/JrICGE1MgAiKJXjTU6r1V/ywyX58Wh4krzJuNOqOqWY/oprdYHMwZXyW62/mREKfsVUIjPhynd863bokJsP2OJlFeynntqGf6BIIaPJk5YNMzv9gcG6hwAYTNUN5D9IY/8TEiohL6XUzWaVfEgtryAS/j15c1xSd9ES/CQNdfNqns9Mih8G2LV6woW+SFerXOvhz8rrJHn+RQF09DYqCQFm0eEHMvUSBKQSfKW1ioZiOgzzWUW94euGgH9Wown0QWGK69AxRCAZvdZvkQg/JltKDbND/WNYdTX1vtuKflbJzfs0kITLDIBaj1WMCZGni9Ih9DvVhA=
   skip_cleanup: true
   bucket: "wc-jqx-artifact-repo"
-    on:
-      tags: true
+  on:
+    tags: true
