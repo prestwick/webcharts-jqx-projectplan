@@ -18,7 +18,6 @@ addons:
     paths:
     - $HOME/build/prestwick/webcharts-jqx-projectplan/tmp/example.min.js
     - $HOME/build/prestwick/webcharts-jqx-projectplan/tmp/example.min.js.map
-    debug: true
 deploy:
 - provider: s3
   access_key_id: "AKIAJU47PGYQQL2G2WCQ"
