@@ -30,7 +30,6 @@ deploy:
   upload-dir: latest
   on:
     tags: true
-deploy:
   provider: s3
   access_key_id: "AKIAJU47PGYQQL2G2WCQ"
   secret_access_key:
