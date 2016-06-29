@@ -19,7 +19,6 @@ addons:
     - $HOME/build/prestwick/webcharts-jqx-projectplan/tmp/example.min.js
     - $HOME/build/prestwick/webcharts-jqx-projectplan/tmp/example.min.js.map
 deploy:
-  matrix:
   - provider: s3
     access_key_id: AKIAJU47PGYQQL2G2WCQ
     secret_access_key:
