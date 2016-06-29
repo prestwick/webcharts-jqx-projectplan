@@ -19,23 +19,29 @@ addons:
     - $HOME/build/prestwick/webcharts-jqx-projectplan/tmp/example.min.js
     - $HOME/build/prestwick/webcharts-jqx-projectplan/tmp/example.min.js.map
 deploy:
-- provider: s3
-  access_key_id: "AKIAJU47PGYQQL2G2WCQ"
-  secret_access_key:
-    secure: LiaGBxUzPtrmodtmA2KK3QbFQ4ROTAx4lyaC19kU0eB0hi7/AOIPia1WWhmhIhJsEevyJBSnDv/75bolVRN/dpBPRefu9CQW5wgX/dEk7US+52zrPT5BWsmhlwttqtmD2m7cnU6IY7C8FF/gjJM1uxqq5ToP8RqGeOxYiw+GRkz/Ge+5Nc+Pxk/Y7PQYtuAoU7DLzdhsnkp3DsqjHQwIjMbEp2Q8aBcvbBFuzdxYovBRj1O6YDy3IZxdCH3ZUu35ChwIT8KAB7Jgaqyk354cqU4nXEp1v9L18Bmp/wu+D/az94X5vTul/AQbmGbWJ78HLKzxx2M21NzZnEFPHMhe1jS8mH9YiFqPA/JrICGE1MgAiKJXjTU6r1V/ywyX58Wh4krzJuNOqOqWY/oprdYHMwZXyW62/mREKfsVUIjPhynd863bokJsP2OJlFeynntqGf6BIIaPJk5YNMzv9gcG6hwAYTNUN5D9IY/8TEiohL6XUzWaVfEgtryAS/j15c1xSd9ES/CQNdfNqns9Mih8G2LV6woW+SFerXOvhz8rrJHn+RQF09DYqCQFm0eEHMvUSBKQSfKW1ioZiOgzzWUW94euGgH9Wown0QWGK69AxRCAZvdZvkQg/JltKDbND/WNYdTX1vtuKflbJzfs0kITLDIBaj1WMCZGni9Ih9DvVhA=
-  skip_cleanup: true
-  bucket: "wc-jqx-artifact-repo"
-  local_dir: tmp
-  upload-dir: latest
-  on:
-    tags: true
-- provider: s3
-  access_key_id: "AKIAJU47PGYQQL2G2WCQ"
-  secret_access_key:
-    secure: LiaGBxUzPtrmodtmA2KK3QbFQ4ROTAx4lyaC19kU0eB0hi7/AOIPia1WWhmhIhJsEevyJBSnDv/75bolVRN/dpBPRefu9CQW5wgX/dEk7US+52zrPT5BWsmhlwttqtmD2m7cnU6IY7C8FF/gjJM1uxqq5ToP8RqGeOxYiw+GRkz/Ge+5Nc+Pxk/Y7PQYtuAoU7DLzdhsnkp3DsqjHQwIjMbEp2Q8aBcvbBFuzdxYovBRj1O6YDy3IZxdCH3ZUu35ChwIT8KAB7Jgaqyk354cqU4nXEp1v9L18Bmp/wu+D/az94X5vTul/AQbmGbWJ78HLKzxx2M21NzZnEFPHMhe1jS8mH9YiFqPA/JrICGE1MgAiKJXjTU6r1V/ywyX58Wh4krzJuNOqOqWY/oprdYHMwZXyW62/mREKfsVUIjPhynd863bokJsP2OJlFeynntqGf6BIIaPJk5YNMzv9gcG6hwAYTNUN5D9IY/8TEiohL6XUzWaVfEgtryAS/j15c1xSd9ES/CQNdfNqns9Mih8G2LV6woW+SFerXOvhz8rrJHn+RQF09DYqCQFm0eEHMvUSBKQSfKW1ioZiOgzzWUW94euGgH9Wown0QWGK69AxRCAZvdZvkQg/JltKDbND/WNYdTX1vtuKflbJzfs0kITLDIBaj1WMCZGni9Ih9DvVhA=
-  skip_cleanup: true
-  bucket: "wc-jqx-artifact-repo"
-  local_dir: tmp
-  upload-dir: $TRAVIS_TAG
-  on:
-    tags: true
+  - provider: s3
+    access_key_id: AKIAJU47PGYQQL2G2WCQ
+    secret_access_key:
+      secure: LiaGBxUzPtrmodtmA2KK3QbFQ4ROTAx4lyaC19kU0eB0hi7/AOIPia1WWhmhIhJsEevyJBSnDv/75bolVRN/dpBPRefu9CQW5wgX/dEk7US+52zrPT5BWsmhlwttqtmD2m7cnU6IY7C8FF/gjJM1uxqq5ToP8RqGeOxYiw+GRkz/Ge+5Nc+Pxk/Y7PQYtuAoU7DLzdhsnkp3DsqjHQwIjMbEp2Q8aBcvbBFuzdxYovBRj1O6YDy3IZxdCH3ZUu35ChwIT8KAB7Jgaqyk354cqU4nXEp1v9L18Bmp/wu+D/az94X5vTul/AQbmGbWJ78HLKzxx2M21NzZnEFPHMhe1jS8mH9YiFqPA/JrICGE1MgAiKJXjTU6r1V/ywyX58Wh4krzJuNOqOqWY/oprdYHMwZXyW62/mREKfsVUIjPhynd863bokJsP2OJlFeynntqGf6BIIaPJk5YNMzv9gcG6hwAYTNUN5D9IY/8TEiohL6XUzWaVfEgtryAS/j15c1xSd9ES/CQNdfNqns9Mih8G2LV6woW+SFerXOvhz8rrJHn+RQF09DYqCQFm0eEHMvUSBKQSfKW1ioZiOgzzWUW94euGgH9Wown0QWGK69AxRCAZvdZvkQg/JltKDbND/WNYdTX1vtuKflbJzfs0kITLDIBaj1WMCZGni9Ih9DvVhA=
+    skip_cleanup: true
+    bucket: wc-jqx-artifact-repo
+    local_dir: tmp
+    upload-dir: latest
+    on:
+      tags: true
+  - provider: s3
+    access_key_id: AKIAJU47PGYQQL2G2WCQ
+    secret_access_key:
+      secure: LiaGBxUzPtrmodtmA2KK3QbFQ4ROTAx4lyaC19kU0eB0hi7/AOIPia1WWhmhIhJsEevyJBSnDv/75bolVRN/dpBPRefu9CQW5wgX/dEk7US+52zrPT5BWsmhlwttqtmD2m7cnU6IY7C8FF/gjJM1uxqq5ToP8RqGeOxYiw+GRkz/Ge+5Nc+Pxk/Y7PQYtuAoU7DLzdhsnkp3DsqjHQwIjMbEp2Q8aBcvbBFuzdxYovBRj1O6YDy3IZxdCH3ZUu35ChwIT8KAB7Jgaqyk354cqU4nXEp1v9L18Bmp/wu+D/az94X5vTul/AQbmGbWJ78HLKzxx2M21NzZnEFPHMhe1jS8mH9YiFqPA/JrICGE1MgAiKJXjTU6r1V/ywyX58Wh4krzJuNOqOqWY/oprdYHMwZXyW62/mREKfsVUIjPhynd863bokJsP2OJlFeynntqGf6BIIaPJk5YNMzv9gcG6hwAYTNUN5D9IY/8TEiohL6XUzWaVfEgtryAS/j15c1xSd9ES/CQNdfNqns9Mih8G2LV6woW+SFerXOvhz8rrJHn+RQF09DYqCQFm0eEHMvUSBKQSfKW1ioZiOgzzWUW94euGgH9Wown0QWGK69AxRCAZvdZvkQg/JltKDbND/WNYdTX1vtuKflbJzfs0kITLDIBaj1WMCZGni9Ih9DvVhA=
+    skip_cleanup: true
+    bucket: wc-jqx-artifact-repo
+    local_dir: tmp
+    upload-dir: $TRAVIS_TAG
+    on:
+      tags: true
+  - provider: npm
+    email: "mark.prestwick@gmail.com"
+    api_key:
+      secure: r3MhvzbLgkxId5R27ccZ5KjtAE6lnZ0RnRt7MLlSdsJwzoJkAA3lI0oHmQo3FN45DMCSEqQCpn+kPHfXrE7Na3/upiTMjwVHtkRaM0NGQ3AJst94TewEMie5M4HUwlBAKon+IYbNPbY6djxfThdn1DHtQk5HIlNjTqakrSYrlgE1uGokQYiijt7uhi9MPoDkQXMYFbEJkutry3DXcP3QQaXXSBH4kCJFYpkbJpEQ6bzvSadfT4gE6fmHCRf7gnS7MK/eC8Kh5c8m9u3s/2igl+2ZhENQrBo47zbr/BY8V25xYVrpHoGzwZ5IMbscd8d2cjiUr8aE4joCCp3/dJK4g/7/PsUB2Ssc7PVCkABEwdHqFfzHcFmiwsWvOTUOInGum7FMorLZGLih3jr36ELxtHrsyOaDx9SmhV3OBdruKXsJGwS/gBzoh0jtcita2Be1u9xTVF8w7aLUNVGppR/avkWKkG3CvjX7QRFg4vCyP24uwIrvmB9gdrBmcL09lXXJEicArsXPTfzDMsnGQMCSgkVAK6qDB12023fnR/pLYdfn4Nv79pOWE9SPUSpOXyEHBrxZjikIXVy86ml9s2CjdxXuByFrXBF2GFJMyby6AliSos4GVF3fFkVDVM5yypa3kJXxt42ZNYLxlFGn9nk2Sb7dS2mf/ruYjbk/5ICpWs=
+    on:
+      tags: true
