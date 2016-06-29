@@ -25,12 +25,11 @@ The primary tool for work item management will be Rally. While not perfect Rally
 
 # User Story Process
 In our Kanban process we will utilize the following states
-- __Backlog:__ (Rally Submitted) This state is where all users stories are kept before work has been started. The backlog is kept in a stack rank order by the PO. Items on the top of the backlog's stack rank are the highest priority and should be worked on first. 
- - __Backlog Ready to Pull:__ This is a meta state of a user story since it does not have its own column in the Kanban board. A user story enters this meta state when the PO has completely filled out the acceptance criteria for the User Story. 
-- __Definition:__ (Rally Definition) This state where a developer adds tasks, write implementation details, and (if performing test driven development) writes tests. We encourage developers to think deeply about what they are planning to build before beginning work. This may be the most important state in the workflow. 
-- __In Progress:__ (Rally In Progress) This state is where development occurs. Developers move tasks between the *Defined, In Progress, and Complete* as they implement the user story.
-- __Merge:__ (Rally Complete) This state is where implementation is complete the code branch is being merged into the master. All tests should pass. This signals the PO that the user story can be reviewed. 
-- __Accepted:__ (Rally Accepted) This is the final state of the user story signifying that all work is complete and the functionality has been reviewed and accepted by the PO. 
+- __Submitted:__ This state is where all users stories are kept before work has been started. The backlog is kept in a stack rank order by the PO. Items on the top of the backlog's stack rank are the highest priority and should be worked on first.  
+- __Definition:__ (Rally Definition) A user story enters this state when the PO has completely filled out the acceptance criteria for the User Story. This state where a developer adds tasks, write implementation details, and (if performing test driven development) writes tests. We encourage developers to think deeply about what they are planning to build before beginning work. This may be the most important state in the workflow. 
+- __In Progress:__ This state is where development occurs. Developers move tasks between the *Defined, In Progress, and Complete* as they implement the user story.
+- __Complete:__ This state is where the feature branch has been merged into the master. All tests should pass. This signals the PO that the user story can be reviewed. 
+- __Accepted:__ This is the final state of the user story signifying that all work is complete and the functionality has been reviewed and accepted by the PO. 
 
 ## Story Points, Velocity, and Affinity Estimation
 In order to have the ability to estimate our progress between the current time and any future release we use Story Points to calculate velocity. 

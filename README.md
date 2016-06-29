@@ -8,11 +8,16 @@ This repo collects project plan and process documentation for delivering custom 
 
 # Process Architecture
 The process utilized by these teams will be detailed in the following documents. 
-- /docs
  - Requirements and Documentation (Reqs and docs.md)
  - Agile and Work Item Management (Agile.md)
  - Version Control, Branching, and Continuous Integration (VC and CI.md)
  - Release (Release.md)
+ 
+# Tooling
+- Tests run using Karma and Jasmine
+- CI provided by Travis-ci
+- Artifact repository provided by s3. Minified artifacts deployed on every submit
+- Release deployment via NPM and s3. Deployments occur when tagging a branch.
 
 # Getting Started
 1. Install [node.js and npm](https://nodejs.org/dist/v4.4.5/node-v4.4.5.pkg)

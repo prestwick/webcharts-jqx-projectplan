@@ -2,7 +2,7 @@
 var require,
     ug = require("uglify-js2"),
     fs = require('fs'),
-    dir = './tmp',
+    dir = './min',
     result;
 
 if (!fs.existsSync(dir)) {
