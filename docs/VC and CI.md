@@ -41,8 +41,8 @@ Testing along with documentation and the delivered code are the three pillars of
 This tests individual method calls to ensure regressions have not been introduced. These tests will be run against code that is in the branch currently being committed to git. 
 
 ## Automated Acceptance Tests
-Acceptance test only run after unit tests have passed. The tests themselves should touch public APIs only and to the best of our ability reflect the actions of end users using the software. These tests are to run a production-like environment (referred to as test enviroment) on minified code that is access via CDN (hosted), npm package, (installed), or NuGet package (installed). The tests run on these three distributions can be the same. All tests should be run on all browsers we claim support for each type of distribution. This creates a test matrix as follows
-- Acceptance Test Suite, Code via CDN, Test on Chrome, Firefox, Edge, and Safari
+Acceptance test only run after unit tests have passed. The tests themselves should touch public APIs only and to the best of our ability reflect the actions of end users using the software. These tests are to run a production-like environment (referred to as test enviroment) on minified code that is access via s3 (hosted), npm package, (installed), or NuGet package (installed). The tests run on these three distributions can be the same. All tests should be run on all browsers we claim support for each type of distribution. This creates a test matrix as follows
+- Acceptance Test Suite, Code via s3, Test on Chrome, Firefox, Edge, and Safari
 - Acceptance Test Suite, Code via npm, Test on Chrome, Firefox, Edge, and Safari
 - Acceptance Test Suite, Code via NuGet, Test on Chrome, Firefox, Edge, and Safari
 
