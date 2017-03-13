@@ -8,7 +8,7 @@ before_install:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
 before_script:
-- npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
+- npm config set //registry.npmjs.org/:_authToken=${TOKEN}
 - npm install
 after_success:
 - npm run minify
