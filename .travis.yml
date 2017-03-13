@@ -8,6 +8,7 @@ before_install:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
 before_script:
+- npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
 - npm install
 after_success:
 - npm run minify
@@ -19,29 +20,31 @@ addons:
     - $HOME/build/prestwick/webcharts-jqx-projectplan/min/example.min.js
     - $HOME/build/prestwick/webcharts-jqx-projectplan/min/example.min.js.map
 deploy:
-  - provider: s3
-    access_key_id: AKIAJU47PGYQQL2G2WCQ
-    secret_access_key:
-      secure: LiaGBxUzPtrmodtmA2KK3QbFQ4ROTAx4lyaC19kU0eB0hi7/AOIPia1WWhmhIhJsEevyJBSnDv/75bolVRN/dpBPRefu9CQW5wgX/dEk7US+52zrPT5BWsmhlwttqtmD2m7cnU6IY7C8FF/gjJM1uxqq5ToP8RqGeOxYiw+GRkz/Ge+5Nc+Pxk/Y7PQYtuAoU7DLzdhsnkp3DsqjHQwIjMbEp2Q8aBcvbBFuzdxYovBRj1O6YDy3IZxdCH3ZUu35ChwIT8KAB7Jgaqyk354cqU4nXEp1v9L18Bmp/wu+D/az94X5vTul/AQbmGbWJ78HLKzxx2M21NzZnEFPHMhe1jS8mH9YiFqPA/JrICGE1MgAiKJXjTU6r1V/ywyX58Wh4krzJuNOqOqWY/oprdYHMwZXyW62/mREKfsVUIjPhynd863bokJsP2OJlFeynntqGf6BIIaPJk5YNMzv9gcG6hwAYTNUN5D9IY/8TEiohL6XUzWaVfEgtryAS/j15c1xSd9ES/CQNdfNqns9Mih8G2LV6woW+SFerXOvhz8rrJHn+RQF09DYqCQFm0eEHMvUSBKQSfKW1ioZiOgzzWUW94euGgH9Wown0QWGK69AxRCAZvdZvkQg/JltKDbND/WNYdTX1vtuKflbJzfs0kITLDIBaj1WMCZGni9Ih9DvVhA=
-    skip_cleanup: true
-    bucket: wc-jqx-artifact-repo
-    local_dir: min
-    upload-dir: latest
-    on:
-      tags: true
-  - provider: s3
-    access_key_id: AKIAJU47PGYQQL2G2WCQ
-    secret_access_key:
-      secure: LiaGBxUzPtrmodtmA2KK3QbFQ4ROTAx4lyaC19kU0eB0hi7/AOIPia1WWhmhIhJsEevyJBSnDv/75bolVRN/dpBPRefu9CQW5wgX/dEk7US+52zrPT5BWsmhlwttqtmD2m7cnU6IY7C8FF/gjJM1uxqq5ToP8RqGeOxYiw+GRkz/Ge+5Nc+Pxk/Y7PQYtuAoU7DLzdhsnkp3DsqjHQwIjMbEp2Q8aBcvbBFuzdxYovBRj1O6YDy3IZxdCH3ZUu35ChwIT8KAB7Jgaqyk354cqU4nXEp1v9L18Bmp/wu+D/az94X5vTul/AQbmGbWJ78HLKzxx2M21NzZnEFPHMhe1jS8mH9YiFqPA/JrICGE1MgAiKJXjTU6r1V/ywyX58Wh4krzJuNOqOqWY/oprdYHMwZXyW62/mREKfsVUIjPhynd863bokJsP2OJlFeynntqGf6BIIaPJk5YNMzv9gcG6hwAYTNUN5D9IY/8TEiohL6XUzWaVfEgtryAS/j15c1xSd9ES/CQNdfNqns9Mih8G2LV6woW+SFerXOvhz8rrJHn+RQF09DYqCQFm0eEHMvUSBKQSfKW1ioZiOgzzWUW94euGgH9Wown0QWGK69AxRCAZvdZvkQg/JltKDbND/WNYdTX1vtuKflbJzfs0kITLDIBaj1WMCZGni9Ih9DvVhA=
-    skip_cleanup: true
-    bucket: wc-jqx-artifact-repo
-    local_dir: min
-    upload-dir: $TRAVIS_TAG
-    on:
-      tags: true
-  - provider: npm
-    email: "mark.prestwick@gmail.com"
-    api_key:
-      secure: S00x/BzNvr63Laa8IqNZihj8Vj5qBlX8z/EhAZ8zQooYN3K/KOvL0AfAA90r1uzlnrh9zLSosvyi1/S3giVBv6krTGOuJkWS31hJpxhF8ZFzm/GILSrKY/9/1pDoW4Voeq4fFpGmSId4Q8TXGQ67ohp0b5eluZOvNn65eKw3qemCDjZo3lg+6fzc+tqp8AwGvmt8Cn24W+cf7QpxAoh4mwuLSfIkRWcpIo/RBT1H3vDZSC8+Bv4vzoTAlU6DitbFg/Tu6tklxrVpZ6EUduNT6ROQmRCYow9+cULpy6gB3ShGLMm7iiM949DaIWj1d4FzCEYZwDvw8G4m0dpCnxSlfolnGRonfz9ZIT1c7p0WIIOtYRM1RR0FuRb+l6dXY29nEYWiQaVKKoYmvKZGohLBuW7JR4UIdxxDyOHl7dqajN+TTlhCYO/Jx2ebnU5dhaSItivz5+GgR7VNO1obGsSJEEgICWwFeT01wrxixRYq1pIIYsfwgCEC/6T/bM1E9Q0QcpsUfZ9izBMuuTGNPD06nz5VpnMtbzH/FLCDcWFzmhWZ2sC0j6XLFXC9f5a0RyW5v9VtAxdEY6rd43eSzTH57P4oIuTHMuUQP5IUZlXgiCXbu778l0SNnXLKeEkeSXQo2+hwVOpoEwl1HN8ZYhivarNV4NH/uieaRc5TQKcRuXI=
-    on:
-      tags: true
+- provider: s3
+  access_key_id: AKIAJU47PGYQQL2G2WCQ
+  secret_access_key:
+    secure: LiaGBxUzPtrmodtmA2KK3QbFQ4ROTAx4lyaC19kU0eB0hi7/AOIPia1WWhmhIhJsEevyJBSnDv/75bolVRN/dpBPRefu9CQW5wgX/dEk7US+52zrPT5BWsmhlwttqtmD2m7cnU6IY7C8FF/gjJM1uxqq5ToP8RqGeOxYiw+GRkz/Ge+5Nc+Pxk/Y7PQYtuAoU7DLzdhsnkp3DsqjHQwIjMbEp2Q8aBcvbBFuzdxYovBRj1O6YDy3IZxdCH3ZUu35ChwIT8KAB7Jgaqyk354cqU4nXEp1v9L18Bmp/wu+D/az94X5vTul/AQbmGbWJ78HLKzxx2M21NzZnEFPHMhe1jS8mH9YiFqPA/JrICGE1MgAiKJXjTU6r1V/ywyX58Wh4krzJuNOqOqWY/oprdYHMwZXyW62/mREKfsVUIjPhynd863bokJsP2OJlFeynntqGf6BIIaPJk5YNMzv9gcG6hwAYTNUN5D9IY/8TEiohL6XUzWaVfEgtryAS/j15c1xSd9ES/CQNdfNqns9Mih8G2LV6woW+SFerXOvhz8rrJHn+RQF09DYqCQFm0eEHMvUSBKQSfKW1ioZiOgzzWUW94euGgH9Wown0QWGK69AxRCAZvdZvkQg/JltKDbND/WNYdTX1vtuKflbJzfs0kITLDIBaj1WMCZGni9Ih9DvVhA=
+  skip_cleanup: true
+  bucket: wc-jqx-artifact-repo
+  local_dir: min
+  upload-dir: latest
+  on:
+    tags: true
+- provider: s3
+  access_key_id: AKIAJU47PGYQQL2G2WCQ
+  secret_access_key:
+    secure: LiaGBxUzPtrmodtmA2KK3QbFQ4ROTAx4lyaC19kU0eB0hi7/AOIPia1WWhmhIhJsEevyJBSnDv/75bolVRN/dpBPRefu9CQW5wgX/dEk7US+52zrPT5BWsmhlwttqtmD2m7cnU6IY7C8FF/gjJM1uxqq5ToP8RqGeOxYiw+GRkz/Ge+5Nc+Pxk/Y7PQYtuAoU7DLzdhsnkp3DsqjHQwIjMbEp2Q8aBcvbBFuzdxYovBRj1O6YDy3IZxdCH3ZUu35ChwIT8KAB7Jgaqyk354cqU4nXEp1v9L18Bmp/wu+D/az94X5vTul/AQbmGbWJ78HLKzxx2M21NzZnEFPHMhe1jS8mH9YiFqPA/JrICGE1MgAiKJXjTU6r1V/ywyX58Wh4krzJuNOqOqWY/oprdYHMwZXyW62/mREKfsVUIjPhynd863bokJsP2OJlFeynntqGf6BIIaPJk5YNMzv9gcG6hwAYTNUN5D9IY/8TEiohL6XUzWaVfEgtryAS/j15c1xSd9ES/CQNdfNqns9Mih8G2LV6woW+SFerXOvhz8rrJHn+RQF09DYqCQFm0eEHMvUSBKQSfKW1ioZiOgzzWUW94euGgH9Wown0QWGK69AxRCAZvdZvkQg/JltKDbND/WNYdTX1vtuKflbJzfs0kITLDIBaj1WMCZGni9Ih9DvVhA=
+  skip_cleanup: true
+  bucket: wc-jqx-artifact-repo
+  local_dir: min
+  upload-dir: $TRAVIS_TAG
+  on:
+    tags: true
+- provider: npm
+  email: mark.prestwick@gmail.com
+  api_key:
+    secure: S00x/BzNvr63Laa8IqNZihj8Vj5qBlX8z/EhAZ8zQooYN3K/KOvL0AfAA90r1uzlnrh9zLSosvyi1/S3giVBv6krTGOuJkWS31hJpxhF8ZFzm/GILSrKY/9/1pDoW4Voeq4fFpGmSId4Q8TXGQ67ohp0b5eluZOvNn65eKw3qemCDjZo3lg+6fzc+tqp8AwGvmt8Cn24W+cf7QpxAoh4mwuLSfIkRWcpIo/RBT1H3vDZSC8+Bv4vzoTAlU6DitbFg/Tu6tklxrVpZ6EUduNT6ROQmRCYow9+cULpy6gB3ShGLMm7iiM949DaIWj1d4FzCEYZwDvw8G4m0dpCnxSlfolnGRonfz9ZIT1c7p0WIIOtYRM1RR0FuRb+l6dXY29nEYWiQaVKKoYmvKZGohLBuW7JR4UIdxxDyOHl7dqajN+TTlhCYO/Jx2ebnU5dhaSItivz5+GgR7VNO1obGsSJEEgICWwFeT01wrxixRYq1pIIYsfwgCEC/6T/bM1E9Q0QcpsUfZ9izBMuuTGNPD06nz5VpnMtbzH/FLCDcWFzmhWZ2sC0j6XLFXC9f5a0RyW5v9VtAxdEY6rd43eSzTH57P4oIuTHMuUQP5IUZlXgiCXbu778l0SNnXLKeEkeSXQo2+hwVOpoEwl1HN8ZYhivarNV4NH/uieaRc5TQKcRuXI=
+  on:
+    tags: true
+env:
+  secure: P3SJXdWIyPX4dMUg5GUM1txYvMvzkzH2DjJe6a/EBhZCibPoLwo2JyWXRua1575u0IMIui5YHXy+3Gx/o+pCA0WTQ0ithhA/10uQnkxmjGiJMCsYD7PZ+e9a0svwCEcJXwRwCrYGcKYt/aQ5weST5zBM7YfYS53qVr2Ield7EckSnGITJpoTh2UL3Gw4sLfB4NjQoyw+pxYWBRxlfIxSvrSC0aHwasRKfk9VHMXnocbqAVKfLDnVzXrnjDmVzHsVyyBuOxLipZRsiwF8ZEOOrcozL1fqroz9p2rGWg/BRNlQZ+4QDVPpt6HEe1con2X6iPLF7YEcdYnoJqgSBLUNphDZpox8LDXshoan6rlew11BYvLg9TlO6XNs4Zb7wdYQsBQa4U+fwsZmzIkA5mjF6V+Fb72N1E8Cvr0Uf7oFiKr+MofELrOHrCkS/Px++Tqf+O9HJp9AR/jkU+HW32tFChsLrkCNOcioRVyqs79N82V++G8/Ddp3Ca/ssT026PkUr0wN/72+uHt8guwhF1JdZVsTMpKs61PsmvMNw+AYbAOOtRsjg5+Rzvg+2V+V8nBbcKyAtzoP3J/G44rn0VCKAMnlKty3a7PB73ToqqfBaidIsOz6k4dvi72Q5jWHmXRsiifxxH7tlGc+p+sV5VMeiyhJxpLDGXRZzb6irf/XeCk=
