@@ -20,9 +20,9 @@
     "url": "https://github.com/prestwick/webcharts-jqx-projectplan/issues"
   },
   "homepage": "https://github.com/prestwick/webcharts-jqx-projectplan#readme",
-"dependencies": {
-  "@ni-kismet/data-types": "0.0.1"
-}
+  "dependencies": {
+    "@ni-kismet/data-types": "0.0.1"
+  },
   "devDependencies": {
     "jasmine-core": "2.4.1",
     "jscs": "3.0.4",
