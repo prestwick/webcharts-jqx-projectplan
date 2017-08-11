@@ -1,6 +1,6 @@
 {
   "name": "webcharts-jqx-projectplan",
-  "version": "1.0.0-alpha0",
+  "version": "1.0.0-alpha0.0",
   "description": "Documents describing the project plan and process for JQX and WebCharts. Using Github to explore and refine the process.",
   "main": "index.js",
   "scripts": {
