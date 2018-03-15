@@ -31,7 +31,7 @@ jobs:
         on:
           tags: true
     - stage: test deploy
-      if: branch = master
+      if: $TRAVIS_BRANCH = master
       deploy:
         provider: s3
         access_key_id: AKIAJU47PGYQQL2G2WCQ
@@ -44,7 +44,7 @@ jobs:
           on:
             branch: master
     - stage: prod deploy
-      if: branch = release
+      if: $TRAVIS_BRANCH = release
       deploy:
         provider: npm
         email: "mark.prestwick@gmail.com"
