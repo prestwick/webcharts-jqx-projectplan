@@ -1,27 +1,22 @@
 language: node_js
 node_js:
 - '6'
-script:
-- npm run test
-- npm run lint-style
-before_install:
-- export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
-before_script:
-- npm install
-after_success:
-- npm run minify
 notifications:
   email: false
-addons:
-  artifacts:
-    paths:
-    - $HOME/build/prestwick/webcharts-jqx-projectplan/min/example.min.js
-    - $HOME/build/prestwick/webcharts-jqx-projectplan/min/example.min.js.map
-
-
+  
 jobs:
   include:
+    - stage: unit test
+      script:
+      - npm run test
+      - npm run lint-style
+      before_install:
+      - export DISPLAY=:99.0
+      - sh -e /etc/init.d/xvfb start
+      before_script:
+      - npm install
+      after_success:
+    - npm run minify
     - stage: dev deploy
       if: tag = *dev*
       deploy:
@@ -35,7 +30,6 @@ jobs:
         upload-dir: $TRAVIS_TAG
         on:
           tags: true
-
     - stage: test deploy
       if: branch = master
       deploy:
@@ -49,7 +43,6 @@ jobs:
           upload-dir: latest
           on:
             branch: master
-
     - stage: prod deploy
       if: branch = release
       deploy:
