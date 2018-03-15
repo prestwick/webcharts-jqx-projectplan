@@ -3,7 +3,7 @@ node_js:
 - '6'
 notifications:
   email: false
-  
+
 jobs:
   include:
     - stage: unit test
@@ -18,7 +18,7 @@ jobs:
       after_success:
     - npm run minify
     - stage: dev deploy
-      if: tag = *dev*
+      if: $TRAVIS_TAG = *dev*
       deploy:
         provider: s3
         access_key_id: AKIAJU47PGYQQL2G2WCQ
