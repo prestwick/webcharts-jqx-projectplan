@@ -13,11 +13,11 @@ after_success:
 - npm run minify
 notifications:
   email: false
-addons:
-  artifacts:
-    paths:
-    - $HOME/build/prestwick/webcharts-jqx-projectplan/min/example.min.js
-    - $HOME/build/prestwick/webcharts-jqx-projectplan/min/example.min.js.map
+# addons:
+#   artifacts:
+#     paths:
+#     - $HOME/build/prestwick/webcharts-jqx-projectplan/min/example.min.js
+#     - $HOME/build/prestwick/webcharts-jqx-projectplan/min/example.min.js.map
 deploy:
   # deploy to dev
   - provider: s3
