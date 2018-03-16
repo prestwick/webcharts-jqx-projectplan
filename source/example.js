@@ -7,7 +7,7 @@ var example = function (firstNum, secondNum) {
     };
 };
 
-var goToProd1 = function (firstNum, secondNum) {
+var doItAgain = function (firstNum, secondNum) {
     'use strict';
     var sum;
     sum = firstNum + secondNum;
