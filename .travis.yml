@@ -13,11 +13,6 @@ after_success:
 - npm run minify
 notifications:
   email: false
-# addons:
-#   artifacts:
-#     paths:
-#     - $HOME/build/prestwick/webcharts-jqx-projectplan/min/example.min.js
-#     - $HOME/build/prestwick/webcharts-jqx-projectplan/min/example.min.js.map
 deploy:
   # deploy to dev
   - provider: s3
@@ -46,6 +41,19 @@ deploy:
   - provider: npm
     email: "mark.prestwick@gmail.com"
     api_key:
-      secure: S00x/BzNvr63Laa8IqNZihj8Vj5qBlX8z/EhAZ8zQooYN3K/KOvL0AfAA90r1uzlnrh9zLSosvyi1/S3giVBv6krTGOuJkWS31hJpxhF8ZFzm/GILSrKY/9/1pDoW4Voeq4fFpGmSId4Q8TXGQ67ohp0b5eluZOvNn65eKw3qemCDjZo3lg+6fzc+tqp8AwGvmt8Cn24W+cf7QpxAoh4mwuLSfIkRWcpIo/RBT1H3vDZSC8+Bv4vzoTAlU6DitbFg/Tu6tklxrVpZ6EUduNT6ROQmRCYow9+cULpy6gB3ShGLMm7iiM949DaIWj1d4FzCEYZwDvw8G4m0dpCnxSlfolnGRonfz9ZIT1c7p0WIIOtYRM1RR0FuRb+l6dXY29nEYWiQaVKKoYmvKZGohLBuW7JR4UIdxxDyOHl7dqajN+TTlhCYO/Jx2ebnU5dhaSItivz5+GgR7VNO1obGsSJEEgICWwFeT01wrxixRYq1pIIYsfwgCEC/6T/bM1E9Q0QcpsUfZ9izBMuuTGNPD06nz5VpnMtbzH/FLCDcWFzmhWZ2sC0j6XLFXC9f5a0RyW5v9VtAxdEY6rd43eSzTH57P4oIuTHMuUQP5IUZlXgiCXbu778l0SNnXLKeEkeSXQo2+hwVOpoEwl1HN8ZYhivarNV4NH/uieaRc5TQKcRuXI=
-    on:
-      branch: release
+  provider: s3
+  access_key_id: AKIAJ3S2L577F6P64SFA
+  secret_access_key:secure: XHQdByCRzicW5YLJ5Wmm+mPJZ8DDtxSd8+5Jb9bPdyMHJbUicpjRL0lSu9hGHi79ukMnw0gSGZQLhDumYlqi84yE1fzfBw6vvI+xTOisw7bZuJ7ozbRxO/b8vUyZeI3PVCer1g2hu41CH8TPZAOYV7Tq4S6sGoUg3HcW/pEC4MfbyB1CPx6ituABcMw909ie8xN5/5NLQexD3MQ9wUoD/YgbZ5UkmxKUpTv7dfIZTlG2aOxePiiHh8BCwSwAXeZ1+JPN+AdXvNXB2DZ7AA5Mz1nJxsF3yPboclZ+tpX8BajgAOkuHtVv63AhVL7cWdDgFiZjctIFBhg5KXAIV0WIeuc6m6Y+KcQllQo5a76sEL/Q2SJuCy8JtdEilsijn3sq+nAG8JczmVtz7P8NQ6LH+gXqUNSf7JGedb8aGYDaGt3jCOMr3RpFu3Bt2zWLoX6ABngpUUhHujk+5MdN9yuJ3AiWbCPrmhODlDExpO6Itrafid/MlKMx6iIah8NSbBnkW5xS6Ao45xufupJZemMJF3ruJQQLGbwxAOLIvlxN9RxAr5gyjGfJR8CBB8KMjNumYdYHB/Sm1FJGHvpy97y8IM1Dr7/Gjzdb8t7+5+9CNiGHOK4QIOP6prHWuQxpGa8itFQGy53XBr+oltg5LfgSYIwVolXflRCB0rbencMomUw=
+  acl: public_read
+  on:
+    repo: prestwick/webcharts-jqx-projectplan
+    branch: master
+
+  # deploy  to test
+  provider: s3
+  access_key_id: AKIAJ3S2L577F6P64SFA
+  secret_access_key:secure: XHQdByCRzicW5YLJ5Wmm+mPJZ8DDtxSd8+5Jb9bPdyMHJbUicpjRL0lSu9hGHi79ukMnw0gSGZQLhDumYlqi84yE1fzfBw6vvI+xTOisw7bZuJ7ozbRxO/b8vUyZeI3PVCer1g2hu41CH8TPZAOYV7Tq4S6sGoUg3HcW/pEC4MfbyB1CPx6ituABcMw909ie8xN5/5NLQexD3MQ9wUoD/YgbZ5UkmxKUpTv7dfIZTlG2aOxePiiHh8BCwSwAXeZ1+JPN+AdXvNXB2DZ7AA5Mz1nJxsF3yPboclZ+tpX8BajgAOkuHtVv63AhVL7cWdDgFiZjctIFBhg5KXAIV0WIeuc6m6Y+KcQllQo5a76sEL/Q2SJuCy8JtdEilsijn3sq+nAG8JczmVtz7P8NQ6LH+gXqUNSf7JGedb8aGYDaGt3jCOMr3RpFu3Bt2zWLoX6ABngpUUhHujk+5MdN9yuJ3AiWbCPrmhODlDExpO6Itrafid/MlKMx6iIah8NSbBnkW5xS6Ao45xufupJZemMJF3ruJQQLGbwxAOLIvlxN9RxAr5gyjGfJR8CBB8KMjNumYdYHB/Sm1FJGHvpy97y8IM1Dr7/Gjzdb8t7+5+9CNiGHOK4QIOP6prHWuQxpGa8itFQGy53XBr+oltg5LfgSYIwVolXflRCB0rbencMomUw=
+  acl: public_read
+  on:
+    repo: prestwick/webcharts-jqx-projectplan
+    branch: release
