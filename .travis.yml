@@ -14,7 +14,6 @@ after_success:
 notifications:
   email: false
 deploy:
-
   # deploy  to dev
   - provider: s3
     access_key_id: AKIAJ3S2L577F6P64SFA
