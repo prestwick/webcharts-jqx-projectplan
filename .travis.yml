@@ -34,7 +34,7 @@ deploy:
     local_dir: min
     upload-dir: test
     on:
-      branch: master
+      branch: test
   - provider: s3
     access_key_id: AKIAJ3S2L577F6P64SFA
     secret_access_key:
@@ -44,4 +44,4 @@ deploy:
     local_dir: min
     upload-dir: prod
     on:
-      branch: release
+      branch: master
