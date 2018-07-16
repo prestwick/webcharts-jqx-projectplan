@@ -14,34 +14,36 @@ after_success:
 notifications:
   email: false
 deploy:
-  - provider: s3
-    access_key_id: AKIAJ3S2L577F6P64SFA
-    secret_access_key:
-      secure: XHQdByCRzicW5YLJ5Wmm+mPJZ8DDtxSd8+5Jb9bPdyMHJbUicpjRL0lSu9hGHi79ukMnw0gSGZQLhDumYlqi84yE1fzfBw6vvI+xTOisw7bZuJ7ozbRxO/b8vUyZeI3PVCer1g2hu41CH8TPZAOYV7Tq4S6sGoUg3HcW/pEC4MfbyB1CPx6ituABcMw909ie8xN5/5NLQexD3MQ9wUoD/YgbZ5UkmxKUpTv7dfIZTlG2aOxePiiHh8BCwSwAXeZ1+JPN+AdXvNXB2DZ7AA5Mz1nJxsF3yPboclZ+tpX8BajgAOkuHtVv63AhVL7cWdDgFiZjctIFBhg5KXAIV0WIeuc6m6Y+KcQllQo5a76sEL/Q2SJuCy8JtdEilsijn3sq+nAG8JczmVtz7P8NQ6LH+gXqUNSf7JGedb8aGYDaGt3jCOMr3RpFu3Bt2zWLoX6ABngpUUhHujk+5MdN9yuJ3AiWbCPrmhODlDExpO6Itrafid/MlKMx6iIah8NSbBnkW5xS6Ao45xufupJZemMJF3ruJQQLGbwxAOLIvlxN9RxAr5gyjGfJR8CBB8KMjNumYdYHB/Sm1FJGHvpy97y8IM1Dr7/Gjzdb8t7+5+9CNiGHOK4QIOP6prHWuQxpGa8itFQGy53XBr+oltg5LfgSYIwVolXflRCB0rbencMomUw=
-    skip_cleanup: true
-    bucket: wc-jqx-artifact-repo
-    local_dir: min
-    upload-dir: $TRAVIS_TAG
-    on:
-      tags: true
-      condition: $TRAVIS_TAG = *dev*
-  - provider: s3
-    access_key_id: AKIAJ3S2L577F6P64SFA
-    secret_access_key:
-      secure: XHQdByCRzicW5YLJ5Wmm+mPJZ8DDtxSd8+5Jb9bPdyMHJbUicpjRL0lSu9hGHi79ukMnw0gSGZQLhDumYlqi84yE1fzfBw6vvI+xTOisw7bZuJ7ozbRxO/b8vUyZeI3PVCer1g2hu41CH8TPZAOYV7Tq4S6sGoUg3HcW/pEC4MfbyB1CPx6ituABcMw909ie8xN5/5NLQexD3MQ9wUoD/YgbZ5UkmxKUpTv7dfIZTlG2aOxePiiHh8BCwSwAXeZ1+JPN+AdXvNXB2DZ7AA5Mz1nJxsF3yPboclZ+tpX8BajgAOkuHtVv63AhVL7cWdDgFiZjctIFBhg5KXAIV0WIeuc6m6Y+KcQllQo5a76sEL/Q2SJuCy8JtdEilsijn3sq+nAG8JczmVtz7P8NQ6LH+gXqUNSf7JGedb8aGYDaGt3jCOMr3RpFu3Bt2zWLoX6ABngpUUhHujk+5MdN9yuJ3AiWbCPrmhODlDExpO6Itrafid/MlKMx6iIah8NSbBnkW5xS6Ao45xufupJZemMJF3ruJQQLGbwxAOLIvlxN9RxAr5gyjGfJR8CBB8KMjNumYdYHB/Sm1FJGHvpy97y8IM1Dr7/Gjzdb8t7+5+9CNiGHOK4QIOP6prHWuQxpGa8itFQGy53XBr+oltg5LfgSYIwVolXflRCB0rbencMomUw=
-    skip_cleanup: true
-    bucket: wc-jqx-artifact-repo
-    local_dir: min
-    upload-dir: test
-    on:
-      branch: test
-  - provider: s3
-    access_key_id: AKIAJ3S2L577F6P64SFA
-    secret_access_key:
-      secure: XHQdByCRzicW5YLJ5Wmm+mPJZ8DDtxSd8+5Jb9bPdyMHJbUicpjRL0lSu9hGHi79ukMnw0gSGZQLhDumYlqi84yE1fzfBw6vvI+xTOisw7bZuJ7ozbRxO/b8vUyZeI3PVCer1g2hu41CH8TPZAOYV7Tq4S6sGoUg3HcW/pEC4MfbyB1CPx6ituABcMw909ie8xN5/5NLQexD3MQ9wUoD/YgbZ5UkmxKUpTv7dfIZTlG2aOxePiiHh8BCwSwAXeZ1+JPN+AdXvNXB2DZ7AA5Mz1nJxsF3yPboclZ+tpX8BajgAOkuHtVv63AhVL7cWdDgFiZjctIFBhg5KXAIV0WIeuc6m6Y+KcQllQo5a76sEL/Q2SJuCy8JtdEilsijn3sq+nAG8JczmVtz7P8NQ6LH+gXqUNSf7JGedb8aGYDaGt3jCOMr3RpFu3Bt2zWLoX6ABngpUUhHujk+5MdN9yuJ3AiWbCPrmhODlDExpO6Itrafid/MlKMx6iIah8NSbBnkW5xS6Ao45xufupJZemMJF3ruJQQLGbwxAOLIvlxN9RxAr5gyjGfJR8CBB8KMjNumYdYHB/Sm1FJGHvpy97y8IM1Dr7/Gjzdb8t7+5+9CNiGHOK4QIOP6prHWuQxpGa8itFQGy53XBr+oltg5LfgSYIwVolXflRCB0rbencMomUw=
-    skip_cleanup: true
-    bucket: wc-jqx-artifact-repo
-    local_dir: min
-    upload-dir: prod
-    on:
-      branch: master
+- provider: s3
+  access_key_id: AKIAJ3S2L577F6P64SFA
+  secret_access_key:
+    secure: XHQdByCRzicW5YLJ5Wmm+mPJZ8DDtxSd8+5Jb9bPdyMHJbUicpjRL0lSu9hGHi79ukMnw0gSGZQLhDumYlqi84yE1fzfBw6vvI+xTOisw7bZuJ7ozbRxO/b8vUyZeI3PVCer1g2hu41CH8TPZAOYV7Tq4S6sGoUg3HcW/pEC4MfbyB1CPx6ituABcMw909ie8xN5/5NLQexD3MQ9wUoD/YgbZ5UkmxKUpTv7dfIZTlG2aOxePiiHh8BCwSwAXeZ1+JPN+AdXvNXB2DZ7AA5Mz1nJxsF3yPboclZ+tpX8BajgAOkuHtVv63AhVL7cWdDgFiZjctIFBhg5KXAIV0WIeuc6m6Y+KcQllQo5a76sEL/Q2SJuCy8JtdEilsijn3sq+nAG8JczmVtz7P8NQ6LH+gXqUNSf7JGedb8aGYDaGt3jCOMr3RpFu3Bt2zWLoX6ABngpUUhHujk+5MdN9yuJ3AiWbCPrmhODlDExpO6Itrafid/MlKMx6iIah8NSbBnkW5xS6Ao45xufupJZemMJF3ruJQQLGbwxAOLIvlxN9RxAr5gyjGfJR8CBB8KMjNumYdYHB/Sm1FJGHvpy97y8IM1Dr7/Gjzdb8t7+5+9CNiGHOK4QIOP6prHWuQxpGa8itFQGy53XBr+oltg5LfgSYIwVolXflRCB0rbencMomUw=
+  skip_cleanup: true
+  bucket: wc-jqx-artifact-repo
+  local_dir: min
+  upload-dir: "$TRAVIS_TAG"
+  on:
+    tags: true
+    condition: "$TRAVIS_TAG = *dev*"
+- provider: s3
+  access_key_id: AKIAJ3S2L577F6P64SFA
+  secret_access_key:
+    secure: XHQdByCRzicW5YLJ5Wmm+mPJZ8DDtxSd8+5Jb9bPdyMHJbUicpjRL0lSu9hGHi79ukMnw0gSGZQLhDumYlqi84yE1fzfBw6vvI+xTOisw7bZuJ7ozbRxO/b8vUyZeI3PVCer1g2hu41CH8TPZAOYV7Tq4S6sGoUg3HcW/pEC4MfbyB1CPx6ituABcMw909ie8xN5/5NLQexD3MQ9wUoD/YgbZ5UkmxKUpTv7dfIZTlG2aOxePiiHh8BCwSwAXeZ1+JPN+AdXvNXB2DZ7AA5Mz1nJxsF3yPboclZ+tpX8BajgAOkuHtVv63AhVL7cWdDgFiZjctIFBhg5KXAIV0WIeuc6m6Y+KcQllQo5a76sEL/Q2SJuCy8JtdEilsijn3sq+nAG8JczmVtz7P8NQ6LH+gXqUNSf7JGedb8aGYDaGt3jCOMr3RpFu3Bt2zWLoX6ABngpUUhHujk+5MdN9yuJ3AiWbCPrmhODlDExpO6Itrafid/MlKMx6iIah8NSbBnkW5xS6Ao45xufupJZemMJF3ruJQQLGbwxAOLIvlxN9RxAr5gyjGfJR8CBB8KMjNumYdYHB/Sm1FJGHvpy97y8IM1Dr7/Gjzdb8t7+5+9CNiGHOK4QIOP6prHWuQxpGa8itFQGy53XBr+oltg5LfgSYIwVolXflRCB0rbencMomUw=
+  skip_cleanup: true
+  bucket: wc-jqx-artifact-repo
+  local_dir: min
+  upload-dir: test
+  on:
+    branch: test
+- provider: s3
+  access_key_id: AKIAJ3S2L577F6P64SFA
+  secret_access_key:
+    secure: XHQdByCRzicW5YLJ5Wmm+mPJZ8DDtxSd8+5Jb9bPdyMHJbUicpjRL0lSu9hGHi79ukMnw0gSGZQLhDumYlqi84yE1fzfBw6vvI+xTOisw7bZuJ7ozbRxO/b8vUyZeI3PVCer1g2hu41CH8TPZAOYV7Tq4S6sGoUg3HcW/pEC4MfbyB1CPx6ituABcMw909ie8xN5/5NLQexD3MQ9wUoD/YgbZ5UkmxKUpTv7dfIZTlG2aOxePiiHh8BCwSwAXeZ1+JPN+AdXvNXB2DZ7AA5Mz1nJxsF3yPboclZ+tpX8BajgAOkuHtVv63AhVL7cWdDgFiZjctIFBhg5KXAIV0WIeuc6m6Y+KcQllQo5a76sEL/Q2SJuCy8JtdEilsijn3sq+nAG8JczmVtz7P8NQ6LH+gXqUNSf7JGedb8aGYDaGt3jCOMr3RpFu3Bt2zWLoX6ABngpUUhHujk+5MdN9yuJ3AiWbCPrmhODlDExpO6Itrafid/MlKMx6iIah8NSbBnkW5xS6Ao45xufupJZemMJF3ruJQQLGbwxAOLIvlxN9RxAr5gyjGfJR8CBB8KMjNumYdYHB/Sm1FJGHvpy97y8IM1Dr7/Gjzdb8t7+5+9CNiGHOK4QIOP6prHWuQxpGa8itFQGy53XBr+oltg5LfgSYIwVolXflRCB0rbencMomUw=
+  skip_cleanup: true
+  bucket: wc-jqx-artifact-repo
+  local_dir: min
+  upload-dir: prod
+  on:
+    branch: master
+env:
+  secure: Z0SlsBFDgtS8L8Q4kEkP0zzsR3pQgjtIKYiIK7k9oNreCoxMMklE50tafK/TzKRdUYJDygmX6vqTb7c3fDCC1UX8uVlt9s9sS0qcmTtcJPiF8xtIBgeS2B4qa0nWKaegSA3b5vs/1XqhgnchnWNmKzHd3TiwxV+hWA01Ap6yHoAnVAKUQpZNC2BKiyBl2WLAl/A1c9CBb1QUwKjH/CaRRdppVli/f6mC0IDC3tQAQ3ls5+TWYT3BbxTu7L4aWLlYegpntsh9Gi+VJOFs+JO88JqH8Jg3kjys8FQ8JPHnoHfsDwXLLWwUqQoboC8OjfwZ16OTgXmsE4Qsithmigu71uXM1+/qaFz3eowfQe/2gTFx/WeBxmZ+3nSQHq67/a11Lw/nLJBrSg3D0YftKLGnbfu628ExDLDzae/FFyH2lk0jG3gwI5WWIOo3eu8doXn39Yh477jlQjx9nP4UC+ylgiRTq43IJ1iPu8WjEhvyr+P6cEliuOlGAi3RscM6/BW/GmP1lt8UrUXABhbaxXhjEOtKBQXJNpwF5xvJs9r5VoAODCipnMZZ35XkRKfuKxqwv83+78XySvUBgfHg1C92Mh+9QL+/XLsWu42elDL8F2cLLa8V9eTYRg3tpPS2S9iEvVA1o7D1GtYvLQu4vmb/QH7WNevzIcUa6+c3bwNrRQ8=
