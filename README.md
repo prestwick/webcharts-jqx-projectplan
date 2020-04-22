@@ -8,10 +8,10 @@ This repo collects project plan and process documentation for delivering custom 
 
 # Process Architecture
 The process utilized by these teams will be detailed in the following documents. 
- - Requirements and Documentation (Reqs and docs.md)
- - Agile and Work Item Management (Agile.md)
- - Version Control, Branching, and Continuous Integration (VC and CI.md)
- - Release (Release.md)
+ - [Requirements and Documentation] (docs/Reqs and Docs.md)
+ - [Agile and Work Item Management] (docs/Agile.md)
+ - [Version Control, Branching, and Continuous Integration] (docs/VC and CI.md)
+ - [Release] (docs/Release.md)
  
 # Tooling
 - Tests run using Karma and Jasmine
